@@ -2,6 +2,7 @@ from innertube import InnerTube
 import sys
 import json
 from pytube import YouTube
+import tkinter
 
 PARAMS_TYPE_VIDEO = "EgIQAQ%3D%3D"
 PARAMS_TYPE_CHANNEL = "EgIQAg%3D%3D"
@@ -16,21 +17,19 @@ items = data["contents"]["twoColumnSearchResultsRenderer"]["primaryContents"][
     "sectionListRenderer"]["contents"][0]["itemSectionRenderer"]["contents"]
 
 # id = items[0]["videoRenderer"]["videoId"]
-id = "CQBOA061ugE"
+id = "WPw7nlluRdc"
 
-path = "c:\\Users\\grig\\Desktop\\licentus\\The Conspiracy Theory Iceberg.mp"
 
-def plm(ceva, byteceva, intceva):
+def callback(ceva, byteceva, intceva):
     print(ceva)
     # print(byteceva)
-    print(intceva)
+    # print(intceva)
 
 def on_complete(ceva, intceva):
     print("DRACU")
-    print(ceva)
-    print(intceva)
+    # print(ceva)
+    # print(intceva)
 
-plm = YouTube(f'https://youtu.be/{id}', on_progress_callback=plm, on_complete_callback=on_complete).streams.filter(res="360p", progressive="True").first().download()
-# .download();
+plm = YouTube(f'https://youtu.be/{id}', on_progress_callback=callback, on_complete_callback=on_complete).streams.filter(res="360p", progressive="True").first().download()
 # for stream in streams:
 #     print(stream)

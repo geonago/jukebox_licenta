@@ -41,7 +41,6 @@ resume_button.pack()
 stop_button = tk.Button(root, text="Stop", command=stop_file)
 stop_button.pack()
 
-about_us_button = tk.Button(root, text="About Us", command=about_us)
-about_us_button.pack()
+
 
 root.mainloop()
